@@ -25,7 +25,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     nick_name = models.CharField(max_length=255, null=True, blank=True)
     bio = models.CharField(max_length=255, null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='Profile')
+    profile_picture = models.ImageField(upload_to='Profile',null=True,blank=True)
     dob = models.DateField(null=True, blank=True)  # Optional date of birth
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True, blank=True)
     relationship_status = models.CharField(max_length=1, choices=RELATIONSHIP_STATUS_CHOICES, null=True, blank=True)
